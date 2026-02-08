@@ -38,8 +38,22 @@ class App {
       }
     });
 
-    demoLoginBtn?.addEventListener("click", () => {
-      alert("Demo-Modus kommt bald!");
+    demoLoginBtn?.addEventListener("click", async () => {
+      const demoUser = {
+        uid: "demo-user",
+        email: "demo@example.com",
+        displayName: "Demo User",
+      };
+
+      const loginScreen = document.getElementById("loginScreen");
+      const appContainer = document.getElementById("appContainer");
+      const userEmail = document.getElementById("userEmail");
+
+      if (loginScreen) loginScreen.style.display = "none";
+      if (appContainer) appContainer.style.display = "block";
+      if (userEmail) userEmail.textContent = demoUser.displayName;
+
+      await this.loadUserData();
     });
 
     logoutBtn?.addEventListener("click", async () => {
