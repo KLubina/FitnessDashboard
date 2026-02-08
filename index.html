@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnessDashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+        href="https://p7.hiclipart.com/preview/374/84/1020/olympic-weightlifting-weight-training-computer-icons-dumbbell-gym.jpg">
+</head>
+
+<body>
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <h1>FitnessDashboard</h1>
+            <button id="googleLoginBtn" class="google-login-btn">
+                Anmeldung nur für KLubina
+            </button>
+            <button id="demoLoginBtn" class="secondary-btn">Demo für Externe</button>
+        </div>
+    </div>
+
+    <div id="appContainer" style="display: none;">
+        <div class="dashboard">
+            <div class="navigation">
+                <div class="nav-row">
+                    <button class="nav-button" data-tab="weightProjected" onclick="App.switchTab('weightProjected')">
+                        📈 Gewicht Projected
+                    </button>
+                    <button class="nav-button" data-tab="weight" onclick="App.switchTab('weight')">
+                        ⚖️ Gewicht
+                    </button>
+                    <button class="nav-button" data-tab="correlation" onclick="App.switchTab('correlation')">
+                        📊 Korrelation
+                    </button>
+                    <button class="nav-button" data-tab="sleep" onclick="App.switchTab('sleep')">
+                        😴 Schlaf
+                    </button>
+                    <button id="exportBtn" class="nav-button">
+                        💾 Export
+                    </button>
+                    <button id="logoutBtn" class="nav-button">
+                        🚪 Logout
+                    </button>
+                </div>
+            </div>
+
+            <div class="content-panel">
+                <div id="correlationContainer" style="display: none;"></div>
+                <div id="combinedChartContainer" style="display: none;"></div>
+                <div id="weightContainer" style="display: none;"></div>
+                <div id="weightProjectedContainer" style="display: none;"></div>
+                <div id="sleepContainer" style="display: none;"></div>
+                <div id="cheatDayContainer" style="display: none;"></div>
+            </div>
+
+            <div id="ratingModal" class="rating-modal">
+                <div class="rating-content">
+                    <h3>Welches Ernährungs-Template hast du gegessen?</h3>
+                    <p id="selectedDate"></p>
+
+                    <div id="templateButtonsContainer" style="display: grid; gap: 10px; margin: 20px 0;">
+                    </div>
+
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                        Wähle das Template, das deine Ernährung an diesem Tag am besten beschreibt
+                    </p>
+
+                    <button
+                        style="margin-top: 15px; padding: 8px 16px; background: #6c757d; color: white; border: none; border-radius: 5px; cursor: pointer;"
+                        onclick="Modal.close()">
+                        Abbrechen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

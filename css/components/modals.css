@@ -1,0 +1,9 @@
+/* Rating Modal */
+/* Core styles in core-components/modal.css */
+
+.rating-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}

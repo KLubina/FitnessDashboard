@@ -1,0 +1,100 @@
+/* Chart */
+.chart-container {
+    height: 340px;
+    margin-top: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+}
+
+.chart-container--projected {
+    height: 420px;
+}
+
+.chart-svg {
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.chart-svg--interactive {
+    cursor: grab;
+}
+
+.chart-svg--interactive:active {
+    cursor: grabbing;
+}
+
+/* Chart Controls */
+.chart-controls {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.chart-zoom-btn {
+    padding: 6px 10px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.chart-zoom-btn:hover {
+    background: #5a6fd8;
+}
+
+.chart-zoom-btn--secondary {
+    background: #6c757d;
+}
+
+.chart-zoom-btn--secondary:hover {
+    background: #5a6268;
+}
+
+/* Chart Hint */
+.chart-hint {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Legacy Chart Elements */
+.simple-chart {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+.chart-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #667eea;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.chart-point:hover {
+    background: #764ba2;
+    transform: translate(-50%, 50%) scale(1.5);
+}
+
+.chart-line {
+    position: absolute;
+    height: 2px;
+    background: #667eea;
+    transform-origin: left center;
+    z-index: 1;
+}

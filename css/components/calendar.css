@@ -1,0 +1,130 @@
+/* Calendar Styles */
+.calendar-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    align-items: start;
+}
+
+.calendar-section {
+    min-height: 500px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.combo-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    max-width: 1600px;
+    /* Double width to accommodate 180 days with same box size */
+    margin: 0 auto;
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #666;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background: white;
+    font-weight: 500;
+}
+
+.calendar-day:hover:not(.future) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.selected {
+    border-color: #667eea;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+.calendar-day.future {
+    background: #f8f9fa;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.calendar-day.has-nutrition::after {
+    content: '🍴';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 12px;
+}
+
+/* Rating Colors */
+.calendar-day.rated-1 {
+    background: #dc3545;
+    color: white;
+}
+
+.calendar-day.rated-2 {
+    background: #fd7e14;
+    color: white;
+}
+
+.calendar-day.rated-3 {
+    background: #ffc107;
+    color: #333;
+}
+
+.calendar-day.rated-4 {
+    background: #20c997;
+    color: white;
+}
+
+.calendar-day.rated-5 {
+    background: #28a745;
+    color: white;
+}
+
+/* Cheat Day Style (for cheatday calendar) */
+.calendar-day.cheat-day {
+    background: #b197fc;
+    /* light violet */
+    color: white;
+}
+
+.calendar-day.cheat-day::after {
+    content: '🍕';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 12px;
+}
+
+@media (max-width: 1200px) {
+    .calendar-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        gap: 4px;
+    }
+}

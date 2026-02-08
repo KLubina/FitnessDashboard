@@ -1,0 +1,35 @@
+/* Dashboard Layout */
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Panel */
+/* Core styles in core-components/content-panel.css */
+
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 10px;
+    }
+
+    .content-panel {
+        padding: 20px;
+    }
+
+    .weight-input {
+        justify-content: center;
+    }
+}

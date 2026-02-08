@@ -1,0 +1,20 @@
+/* Base Styles */
+@import 'base/base.css';
+
+/* Core Components */
+@import 'core-components/auth.css';
+@import 'core-components/navigation.css';
+@import 'core-components/modal.css';
+@import 'core-components/content-panel.css';
+
+/* Component Styles */
+/* @import 'components/auth.css'; removed due to duplication */
+/* @import 'components/header.css'; removed as header was removed */
+@import 'components/navigation.css';
+@import 'components/layout.css';
+@import 'components/calendar.css';
+@import 'components/day-details.css';
+@import 'components/modals.css';
+@import 'components/stats.css';
+@import 'components/charts.css';
+@import 'components/templates.css';
