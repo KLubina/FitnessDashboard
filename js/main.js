@@ -1,4 +1,5 @@
 import AuthService from "./auth.js";
+import { setupMockData } from "../mock-data/MockLoader.js"; // Import Mock Loader
 import csvExporter from "./services/csvExport.js";
 import nutritionManager from "./services/data/nutrition.js";
 import weightManager from "./services/data/weight.js";
@@ -39,6 +40,9 @@ class App {
     });
 
     demoLoginBtn?.addEventListener("click", async () => {
+      // Initialize Mock Data
+      await setupMockData();
+
       const demoUser = {
         uid: "demo-user",
         email: "demo@example.com",
